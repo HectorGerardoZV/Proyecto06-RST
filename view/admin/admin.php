@@ -54,7 +54,7 @@
                     <div class="data__content">
                         <h2>Properties</h2>
                         <h2>
-                            <?php echo $numProperties ?>
+                            <?php echo $numSallers ?>
                         </h2>
                     </div>
                 </div>
