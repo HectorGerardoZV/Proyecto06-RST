@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700;900&display=swap');
+:root {
+    /*Solid Colors*/
+    --colorSolidA: #140F07;
+    --colorSolidB: #26284A;
+    --colorSolidC: #5959A1;
+    --colorSolidD: #9995FA;
+    --colorSolidE: #F1DCF6;
+    --colorSolid0: #000000;
+    --colorSolid1: #FFFFFF;
+    --colorSolid2: #AB0000;
+    --colorSolid3: #60DA00;
+    /*Transparent Colors*/
+    --colorTransA: rgba(20, 15, 7, 0.7);
+    --colorTransB: rgba(38, 40, 74, 0.7);
+    --colorTransC: rgba(89, 89, 161, 0.7);
+    --colorTransD: rgba(153, 149, 250, 0.7);
+    --colorTransE: rgba(241, 220, 246, 0.7);
+    --colorTrans0: rgba(0, 0, 0, 0.7);
+    --colorTrans1: rgba(255, 255, 255, 0.7);
+    --font: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+    font-family: var(--font);
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+a {
+    font-size: 1.8rem;
+    text-decoration: none;
+}
+
+
+/*Tools*/
+
+.error {
+    background-color: var(--colorSolid2);
+}
