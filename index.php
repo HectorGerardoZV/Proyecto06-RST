@@ -14,8 +14,10 @@ $router = new Router();
 
 $router->addGET("/login",[LoginController::class, "login"]);
 $router->addPOST("/login",[LoginController::class, "login"]);
+$router->addGET("/logout",[LoginController::class, "logout"]);
 $router->addPOST("/logout",[LoginController::class, "logout"]);
 $router->addGET("/admin/admin",[AdminController::class, "admin"]);
+$router->addPOST("/admin/admin",[AdminController::class, "admin"]);
 
 $router->run();
 

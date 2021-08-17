@@ -16,7 +16,9 @@ class AdminController
         $propertyDao = new PropertyDao();
         $numProperties = sizeof($propertyDao->findAll());
 
-
+        if($_SERVER["REQUEST_METHOD"]=="POST"){
+            header("location: /logout");
+        }
 
         $router->render("admin/admin", [
             "numProperties" => $numProperties

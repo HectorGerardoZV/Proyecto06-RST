@@ -1,3 +1,4 @@
+@import url('../style/style.css');
 .login__BackGround {
     background-color: var(--colorSolidE);
     overflow: hidden;

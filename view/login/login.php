@@ -8,7 +8,6 @@
     <title>login</title>
 
 
-    <link rel="stylesheet" href="/view/style/style.css">
     <link rel="stylesheet" href="/view/login/login-style.css">
 </head>
 
