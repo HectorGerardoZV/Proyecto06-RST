@@ -52,7 +52,7 @@
                         <image src="/view/img/icons/Saller-Pink.svg"></image>
                     </div>
                     <div class="data__content">
-                        <h2>Properties</h2>
+                        <h2>Sallers</h2>
                         <h2>
                             <?php echo $numSallers ?>
                         </h2>

@@ -36,6 +36,11 @@
     margin-bottom: 5rem;
 }
 
+.data__image img {
+    width: 10rem;
+    height: 10rem;
+}
+
 .admin__text {
     margin-bottom: 4rem;
 }
