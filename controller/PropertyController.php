@@ -21,11 +21,21 @@ class PropertyController{
             "titelPage" => "PropertyDashBoard",
             "style" => "/view//admin/properties//property-style.css",
             "page"=>"property",
+            "action"=>"dashboard",
             "properties" =>$properties
         ]);
     }
     public static function create(Router $router){
-        echo "Desde Property Dash";
+        $errors = [];
+        $router->render("admin/layout",[
+            "titelPage" => "Property-Creation",
+            "style" => "/view//admin/properties//property-style.css",
+            "page"=>"property",
+            "action"=>"create",
+            "crudAction"=>"Creating Property",
+            "errors" =>$errors
+            
+        ]);
     }
     public static function update(Router $router){
         echo "Desde Property Dash";

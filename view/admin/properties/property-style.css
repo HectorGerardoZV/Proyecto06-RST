@@ -43,18 +43,6 @@
     height: 7rem;
 }
 
-.button {
-    flex: 0 0 3rem;
-    padding: 1rem 6rem;
-    border-radius: 1rem;
-}
-
-.button-create {
-    color: var(--colorSolid1);
-    font-size: 2.5rem;
-    background-color: var(--colorSolid3);
-}
-
 .content {
     padding: 4rem;
     border: 4px solid var(--colorSolidB);
@@ -117,26 +105,84 @@
     gap: 1.5rem;
 }
 
-.action__delete {
-    color: var(--colorSolid1);
-    background-color: var(--colorSolid2);
-    padding: 1rem 0;
-    width: 90%;
-    margin: 0 auto;
-    border-radius: 1rem;
-    font-size: 2.5rem;
-    border: none;
-    cursor: pointer;
+.creation-information {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    align-items: flex-end;
 }
 
-.action__update {
-    color: var(--colorSolid1);
-    background-color: var(--colorSolidD);
-    padding: 1rem 0;
-    width: 90%;
-    margin: 0 auto;
+.action__logo {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+}
+
+.action__logo h2 {
+    color: var(--colorSolidB);
+}
+
+
+/*Form Style*/
+
+.form {
+    margin-bottom: 5rem;
+}
+
+.form fieldset {
+    padding: 4rem;
+    border: none;
+    border: 4px solid var(--colorSolidB);
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.form h3 {
+    text-align: center;
+    color: var(--colorSolidB);
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+}
+
+.input input,
+textarea {
+    padding: 1.5rem;
+    border: none;
+    border: 4px solid var(--colorSolidB);
     border-radius: 1rem;
     font-size: 2.5rem;
-    border: none;
-    cursor: pointer;
+    color: var(--colorSolidB);
+}
+
+.input textarea {
+    height: 30rem;
+}
+
+.input input[type="file"] {
+    font-size: 2rem;
+}
+
+.input label {
+    margin-top: .5rem;
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--colorSolidB);
+    font-weight: bold;
+}
+
+.property-about {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.property-about .input input {
+    width: 70%;
+    margin: 0 auto;
+    font-size: 2.5rem;
+    text-align: center;
 }

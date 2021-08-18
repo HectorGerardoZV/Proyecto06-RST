@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $titelPage ?></title>
     <link rel="stylesheet" href="/view//admin/layout-style.css">
-    <link rel="stylesheet" href="<?php echo $style?>">
+    <link rel="stylesheet" href="<?php echo $style ?>">
 </head>
 
 <body>
@@ -27,7 +27,11 @@
 
     <?php
     if ($page == "property") {
-        include __DIR__ . "/properties/property.php";
+        if ($action == "dashboard") {
+            include __DIR__ . "/properties/property.php";
+        } else if ($action == "create") {
+            include __DIR__ . "/properties/property-form.php";
+        } 
     }
 
     ?>

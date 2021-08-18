@@ -102,3 +102,50 @@ img {
     width: 950%;
     margin: 0 auto;
 }
+
+.button {
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.button-back {
+    text-align: center;
+    background-color: var(--colorSolidB);
+    color: var(--colorSolid1);
+    width: 60%;
+    padding: 1rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+}
+
+.button-create {
+    color: var(--colorSolid1);
+    font-size: 2.5rem;
+    background-color: var(--colorSolid3);
+    padding: 1rem 0;
+    width: 20%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+}
+
+.button-delete {
+    color: var(--colorSolid1);
+    background-color: var(--colorSolid2);
+    padding: 1rem 0;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+}
+
+.button-update {
+    color: var(--colorSolid1);
+    background-color: var(--colorSolidD);
+    padding: 1rem 0;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 1rem;
+    font-size: 2.5rem;
+}

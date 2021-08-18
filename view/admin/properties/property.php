@@ -4,21 +4,14 @@
 
 <div class=" container-min">
     <div class="options">
-        <a href="" class="button button-create">New</a>
+        <a href="/admin/admin/property/create" class="button button-create">New</a>
         <form class="searcher" action="" method="POST">
             <input type="text" placeholder="Search Property">
             <input type="image" src="/view/img/icons//Search.svg" alt="Submit">
         </form>
     </div>
 
-    <?php
-    if($_GET){
-       echo "<pre>";
-       var_dump($_GET);
-       echo "</pre>";
-    }
-    
-    ?>
+
     <div class="content">
         <?php foreach ($properties as $property) { ?>
             <div class="property">
@@ -34,10 +27,10 @@
                     <p class="property__price">$<?php echo $property->getPrice() ?></p>
 
                     <div class="property__actions">
-                        <a class="action__update" href="/admin/admin/property?idProperty=<?php echo $property->getIdProperty()?>">Update</a>
+                        <a class="button button-update" href="/admin/admin/property?idProperty=<?php echo $property->getIdProperty()?>">Update</a>
                         <form class="" action="" method="POST">
                             <input type="hidden" name="idProperty" value=<?php echo $property->getIdProperty()?>>
-                            <input class="action__delete" type="submit" value="Delete">
+                            <input class="button button-delete" type="submit" value="Delete">
                         </form>
                     </div>
                 </div>
