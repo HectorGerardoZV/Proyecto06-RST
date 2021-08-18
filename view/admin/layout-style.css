@@ -1,0 +1,40 @@
+@import url("../style/style.css");
+.header,
+.footer {
+    background-color: var(--colorSolidB);
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+}
+
+.logout input {
+    width: 5rem;
+    height: 5rem;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}

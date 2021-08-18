@@ -78,3 +78,27 @@ img {
 .error {
     background-color: var(--colorSolid2);
 }
+
+.container-min {
+    max-width: 100rem;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.container-regular {
+    max-width: 130rem;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.container-big {
+    max-width: 150rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container-max {
+    max-width: 170rem;
+    width: 950%;
+    margin: 0 auto;
+}
