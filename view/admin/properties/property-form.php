@@ -17,6 +17,14 @@
         <?php } ?>
     <?php } ?>
 
+    <?php if (array_key_exists("update", $_GET)) { ?>
+        <?php if ($_GET["update"] == true) { ?>
+            <p class="message-true">The update was successful</p>
+        <?php } else { ?>
+            <p class="message-flase">The update was failed</p>
+        <?php } ?>
+    <?php } ?>
+
 
 
     <h3>House Information</h3>
@@ -40,6 +48,13 @@
             <label for="image">Image</label>
             <?php if (array_key_exists("imageError", $errors)) { ?>
                 <p class="input-error"><?php echo $errors["imageError"] ?></p>
+            <?php } ?>
+
+            <?php if ($action == "update") { ?>
+                <div class="flex-image-update">
+                    <img class="image-update" src="/view//img//data//properties//<?php echo $property->getImage() ?>" alt="">
+
+                </div>
             <?php } ?>
         </div>
         <div class="input">
@@ -100,6 +115,6 @@
 
     </fieldset>
     <div class="send">
-        <input type="submit" class="button button-send" value="SEND">
+        <input type="submit" class="button button-send" value="<?php echo strtoupper($action) ?>">
     </div>
 </form>

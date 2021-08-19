@@ -29,9 +29,9 @@
     if ($page == "property") {
         if ($action == "dashboard") {
             include __DIR__ . "/properties/property.php";
-        } else if ($action == "create") {
+        } else if ($action == "create" || $action == "update") {
             include __DIR__ . "/properties/property-form.php";
-        } 
+        }
     }
 
     ?>

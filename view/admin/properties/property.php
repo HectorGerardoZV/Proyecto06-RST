@@ -11,6 +11,12 @@
         </form>
     </div>
 
+    <?php if (array_key_exists("delete", $_GET)) { ?>
+        <?php if ($_GET["delete"] == true) { ?>
+            <p class="message-true">Removal was successful</p>
+        <?php } ?>
+    <?php } ?>
+
 
     <div class="content">
         <?php foreach ($properties as $property) { ?>
@@ -22,14 +28,14 @@
                     <h3>Action</h3>
                 </div>
                 <div class="property__values">
-                    <img class="property__image" src="/view//img//data//properties//<?php echo$property->getImage()?>" alt="">
+                    <img class="property__image" src="/view//img//data//properties//<?php echo $property->getImage() ?>" alt="">
                     <p class="property__title"><?php echo $property->getTitle() ?></p>
                     <p class="property__price">$<?php echo $property->getPrice() ?></p>
 
                     <div class="property__actions">
-                        <a class="button button-update" href="/admin/admin/property?idProperty=<?php echo $property->getIdProperty()?>">Update</a>
+                        <a class="button button-update" href="/admin/admin/property/update?idProperty=<?php echo $property->getIdProperty() ?>">Update</a>
                         <form class="" action="" method="POST">
-                            <input type="hidden" name="idProperty" value=<?php echo $property->getIdProperty()?>>
+                            <input type="hidden" name="idProperty" value=<?php echo $property->getIdProperty() ?>>
                             <input class="button button-delete" type="submit" value="Delete">
                         </form>
                     </div>

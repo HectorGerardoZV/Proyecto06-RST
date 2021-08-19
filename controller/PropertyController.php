@@ -86,7 +86,7 @@ class PropertyController
                 $property->setImage($imageName);
                 //Addig property
                 $result = $propertyDao->create($property);
-                if($result){
+                if ($result) {
                     header("location: /admin/admin/property/create?creation=true");
                 }
             }
@@ -108,7 +108,26 @@ class PropertyController
     }
     public static function update(Router $router)
     {
-        echo "Desde Property Dash";
+        $propertyDao = new PropertyDao();
+        $sallerDao = new SallerDao();
+        $errors = [];
+        $sallers = $sallerDao->findAll();
+        if ($_SERVER["REQUEST_METHOD"] == "GET") {
+            $idProperty = intval($_GET["idProperty"]);
+            $property = $propertyDao->find($idProperty);
+
+            $router->render("admin/layout", [
+                "titelPage" => "Property-Updating",
+                "style" => "/view//admin/properties//property-style.css",
+                "page" => "property",
+                "action" => "update",
+                "crudAction" => "Updating Property",
+                "errors" => $errors,
+                "sallers" => $sallers,
+                "property" => $property
+
+            ]);
+        }
     }
     public static function delete(Router $router)
     {

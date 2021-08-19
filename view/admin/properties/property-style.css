@@ -201,3 +201,13 @@ select {
     display: flex;
     justify-content: center;
 }
+
+.flex-image-update {
+    display: flex;
+    justify-content: center;
+}
+
+.image-update {
+    width: 50rem;
+    height: 30rem;
+}
