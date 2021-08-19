@@ -8,35 +8,44 @@
 </div>
 
 
-<form action="" method="POST" class="container-min form">
+<form action="" method="POST" class="container-min form" enctype="multipart/form-data">
+    <?php if (array_key_exists("creation", $_GET)) { ?>
+        <?php if ($_GET["creation"] == true) { ?>
+            <p class="message-true">The creation was successful</p>
+        <?php } else { ?>
+            <p class="message-flase">The creation was failed</p>
+        <?php } ?>
+    <?php } ?>
+
+
 
     <h3>House Information</h3>
     <fieldset>
         <div class="input">
-            <input type="text" placeholder="House Title" name="title">
+            <input type="text" placeholder="House Title" name="title" value="<?php echo $property->getTitle() ?>">
             <label for="title">Title</label>
-            <?php if (!empty($errors)) { ?>
+            <?php if (array_key_exists("titleError", $errors)) { ?>
                 <p class="input-error"><?php echo $errors["titleError"] ?></p>
             <?php } ?>
         </div>
         <div class="input">
-            <input type="number" placeholder="House Price" name="price" min= "1">
+            <input type="number" placeholder="House Price" name="price" min="1" value="<?php echo $property->getPrice() ?>">
             <label for="price">Price</label>
-            <?php if (!empty($errors)) { ?>
+            <?php if (array_key_exists("priceError", $errors)) { ?>
                 <p class="input-error"><?php echo $errors["priceError"] ?></p>
             <?php } ?>
         </div>
         <div class="input">
             <input type="file" name="image">
             <label for="image">Image</label>
-            <?php if (!empty($errors)) { ?>
+            <?php if (array_key_exists("imageError", $errors)) { ?>
                 <p class="input-error"><?php echo $errors["imageError"] ?></p>
             <?php } ?>
         </div>
         <div class="input">
-            <textarea name="description"></textarea>
+            <textarea name="description"><?php echo $property->getDescription() ?></textarea>
             <label for="description">Description</label>
-            <?php if (!empty($errors)) { ?>
+            <?php if (array_key_exists("descriptionError", $errors)) { ?>
                 <p class="input-error"><?php echo $errors["descriptionError"] ?></p>
             <?php } ?>
         </div>
@@ -46,37 +55,51 @@
     <fieldset>
         <div class="property-about">
             <div class="input">
-                <input type="number" name="parking" min="1">
+                <input type="number" name="parking" min="1" value="<?php echo $property->getParking() ?>">
                 <label for="parking">parking</label>
-                <?php if (!empty($errors)) { ?>
-                    <p class="input-error"><?php echo $errors["titleError"] ?></p>
+                <?php if (array_key_exists("parkingError", $errors)) { ?>
+                    <p class="input-error"><?php echo $errors["parkingError"] ?></p>
                 <?php } ?>
             </div>
             <div class="input">
-                <input type="number" name="parking" min="1">
-                <label for="parking">parking</label>
-                <?php if (!empty($errors)) { ?>
-                    <p class="input-error"><?php echo $errors["titleError"] ?></p>
+                <input type="number" name="rooms" min="1" value="<?php echo $property->getRooms() ?>">
+                <label for="rooms">Rooms</label>
+                <?php if (array_key_exists("roomsError", $errors)) { ?>
+                    <p class="input-error"><?php echo $errors["roomsError"] ?></p>
                 <?php } ?>
             </div>
             <div class="input">
-                <input type="number" name="parking" min="1">
-                <label for="parking">parking</label>
-                <?php if (!empty($errors)) { ?>
-                    <p class="input-error"><?php echo $errors["titleError"] ?></p>
+                <input type="number" name="bethrooms" min="1" value="<?php echo $property->getBethRooms() ?>">
+                <label for="bethrooms">BethRooms</label>
+                <?php if (array_key_exists("bethRoomsError", $errors)) { ?>
+                    <p class="input-error"><?php echo $errors["bethRoomsError"] ?></p>
                 <?php } ?>
             </div>
             <div class="input">
-                <input type="number" name="parking" min="1">
-                <label for="parking">parking</label>
-                <?php if (!empty($errors)) { ?>
-                    <p class="input-error"><?php echo $errors["titleError"] ?></p>
+                <input type="number" name="stars" min="1" value="<?php echo $property->getStars() ?>">
+                <label for="stars">Stars</label>
+                <?php if (array_key_exists("starsError", $errors)) { ?>
+                    <p class="input-error"><?php echo $errors["starsError"] ?></p>
                 <?php } ?>
             </div>
+
+        </div>
+        <div class="input">
+            <select name="idSaller">
+                <option value="" disabled selected>--Select--</option>
+                <?php foreach ($sallers as $saller) {   ?>
+                    <option <?php echo intval($property->getIdSaller()) === intval($saller->getIdSaller()) ? 'selected' : '' ?> value="<?php echo $saller->getIdSaller() ?>"><?php echo $saller->getName() . " " . $saller->getLastName() ?></option>
+                <?php }   ?>
+            </select>
+            <label for="">Saller</label>
+            <?php if (array_key_exists("idSaller", $errors)) { ?>
+                <p class="input-error"><?php echo $errors["idSaller"] ?></p>
+            <?php } ?>
         </div>
 
 
-
     </fieldset>
-
+    <div class="send">
+        <input type="submit" class="button button-send" value="SEND">
+    </div>
 </form>
