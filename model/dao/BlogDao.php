@@ -61,6 +61,19 @@ class BlogDao
         }
         return false;
     }
+
+    public function delete($idBlog)
+    {
+        $query = "DELETE FROM blogs WHERE idBlog = $idBlog;";
+        try {
+            $result = $this->db->query($query);
+            return $result;
+        } catch (\Throwable $th) {
+            return false;
+        }
+        return false;
+    }
+
     public function findAll()
     {
         $query = "SELECT * FROM blogs;";

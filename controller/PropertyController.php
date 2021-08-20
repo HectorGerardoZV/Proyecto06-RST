@@ -195,7 +195,6 @@ class PropertyController
     public static function delete(Router $router)
     {
         $propertyDao = new PropertyDao();
-        $properties = $propertyDao->findAll();
         $idProperty =  $_GET["idProperty"];
         $property = $propertyDao->find($idProperty);
         unlink("view/img/data/properties/" . $property->getImage());

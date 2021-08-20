@@ -52,7 +52,7 @@
             <?php } ?>
         </div>
         <div class="input">
-            <textarea name="content"></textarea>
+            <textarea name="content"><?php echo$blog->getContent()?></textarea>
             <label for="content">Content</label>
             <?php if (array_key_exists("contentError", $errors)) { ?>
                 <p class="input-error"><?php echo $errors["contentError"] ?></p>
@@ -69,7 +69,7 @@
 
             <?php if ($action == "update") { ?>
                 <div class="flex-image-update">
-                    <img class="image-update" src="/view//img//data//sallers/<?php echo $saller->getImage() ?>" alt="">
+                    <img class="image-update" src="/view//img//data//blogs/<?php echo $blog->getImage() ?>" alt="">
                 </div>
             <?php } ?>
         </div>

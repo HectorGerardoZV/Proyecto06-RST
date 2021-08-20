@@ -77,10 +77,79 @@ class BlogController
     }
     public static function update(Router $router)
     {
-        echo "Desde blog update";
+        $idBlog = intval($_GET["idBlog"]);
+        $blogDao = new BlogDao();
+        $blog = $blogDao->find($idBlog);
+        $errors = [];
+
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $data = $_POST;
+            $data["image"] = $_FILES["image"]["name"];
+
+            if ($data["title"] == "") {
+                $errors["titleError"] = "Error: Complete the Blog title";
+            }
+            if ($data["creator"] == "") {
+                $errors["creatorError"] = "Error: Complete the creator name";
+            }
+            if ($data["stars"] == "") {
+                $errors["starsError"] = "Error: Select the number of the stars";
+            }
+            if ($data["content"] == "") {
+                $errors["contentError"] = "Error: Complete the information about the blog";
+            } else if (strlen($data["content"]) < 50) {
+                $errors["contentError"] = "Error: The blog information must be more than 50 characters";
+            }
+          
+
+            if (empty($errors)) {
+                if ($data["image"] == "") {
+                    $image = $blog->getImage();
+                    $blog->setData($data);
+                    $blog->setImage($image);
+                } else {
+                    //Get Image
+                    $image = $_FILES["image"];
+                    //Get Extension Image
+                    $extensionImage = explode(".", $image["name"])[1];
+                    //Generete new image name
+                    $imageName = md5(uniqid(rand(), true)) . "." . $extensionImage;
+                    //Saving new image
+                    move_uploaded_file($image["tmp_name"], "view/img/data/blogs/" . $imageName);
+                    //Deleting last imge
+                    unlink("view/img/data/blogs/" . $blog->getImage());
+                    $blog->setData($data);
+                    $blog->setImage($imageName);
+                }
+                $result = $blogDao->update($blog);
+                if ($result) {
+                    header("location: /admin/admin/blog/update?idBlog=$idBlog&update=true");
+                }
+            } else {
+                $image = $blog->getImage();
+                $blog->setData($data);
+                $blog->setImage($image);
+            }
+        }
+
+        $router->render("admin/layout", [
+            "titelPage" => "Blog-Updating",
+            "style" => "/view//admin/blogs/blog-style.css",
+            "page" => "blog",
+            "action" => "update",
+            "crudAction" => "Updating Blog",
+            "errors" => $errors,
+            "blog" => $blog
+        ]);
     }
     public static function delete(Router $router)
     {
-        echo "Desde blog delete";
+        $blogDao = new BlogDao();
+        $idBlog = intval($_GET["idBlog"]);
+        $blog = $blogDao->find($idBlog);
+        unlink("view/img/data/blogs/" . $blog->getImage());
+        $blogDao->delete($idBlog);
+        header("location: /admin/admin/blog?delete=true");
     }
 }
