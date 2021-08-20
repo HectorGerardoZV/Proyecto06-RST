@@ -14,7 +14,11 @@
 
     <header class="header">
         <div class="header__content">
-            <img src="/view/img//icons//Logo-Max-blue.svg" alt="">
+            <div class="admin__logo">
+            <a href="/admin/admin"><img class="" src="/view//img//icons//Admin-Logo-Withe.svg" alt=""></a>
+
+            </div>
+
             <div class="header__logo">
                 <a class="" href="/admin/admin"> <img src="/view/img//icons//Logo-Max.svg" alt=""></a>
                 <img src="/view//img//icons//NightMode-Off.svg" alt="">

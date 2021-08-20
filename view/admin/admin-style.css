@@ -81,12 +81,15 @@
 }
 
 .admin__header {
-    margin-bottom: 10rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.admin__logo {
+    margin-bottom: 3rem;
 }
 
 .logout {

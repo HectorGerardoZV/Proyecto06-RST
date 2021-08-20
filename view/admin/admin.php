@@ -33,7 +33,10 @@
                 <a href="/admin/admin" class="admin__logo">
                     <image src="/view/img/icons/Logo-Max-Blue.svg"></image>
                 </a>
+
             </div>
+            <a href="/admin/admin"><img class="admin__logo" src="/view//img//icons//Admin-Logo.svg" alt=""></a>
+
             <h1 class="admin__text">Company Status</h1>
             <div class="admin__status">
                 <div class="data">

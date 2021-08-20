@@ -38,3 +38,13 @@
     gap: 2rem;
     align-items: center;
 }
+
+.admin__logo {
+    display: flex;
+    justify-content: center;
+}
+
+.admin__logo a img {
+    width: 7rem;
+    height: 7rem;
+}

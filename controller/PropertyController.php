@@ -72,10 +72,23 @@ class PropertyController
             if (!array_key_exists("idSaller", $data)) {
                 $errors["idSaller"] = "Error: Select a saller";
             }
-          
+            $property->setData($data);
+            if (empty($errors)) {
+                //Creating Property
+                $property = new Property($_POST);
+                //Saving the image
+                $image = $_FILES["image"];
+                $extensionImage = explode(".", $image["name"])[1];
+                $imageName = md5(uniqid(rand(), true)) . "." . $extensionImage;
+                move_uploaded_file($image["tmp_name"], "view/img/data/properties/" . $imageName);
+                $property->setImage($imageName);
+                //Addig property
+                $result = $propertyDao->create($property);
+                if ($result) {
+                    header("location: /admin/admin/property/create?creation=true");
+                }
+            }
         }
-
-
 
         $router->render("admin/layout", [
             "titelPage" => "Property-Creation",
