@@ -208,6 +208,8 @@ select {
 }
 
 .image-update {
+    margin-top: 1rem;
     width: 50rem;
     height: 30rem;
+    border-radius: 1rem;
 }

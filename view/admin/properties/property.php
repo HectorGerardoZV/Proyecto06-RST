@@ -34,7 +34,7 @@
 
                     <div class="property__actions">
                         <a class="button button-update" href="/admin/admin/property/update?idProperty=<?php echo $property->getIdProperty() ?>">Update</a>
-                        <form class="" action="" method="POST">
+                        <form class=""  method="POST">
                             <input type="hidden" name="idProperty" value=<?php echo $property->getIdProperty() ?>>
                             <input class="button button-delete" type="submit" value="Delete">
                         </form>

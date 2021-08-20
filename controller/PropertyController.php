@@ -17,6 +17,8 @@ class PropertyController
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $idProperty =  $_POST["idProperty"];
+            $property = $propertyDao->find($idProperty);
+            unlink("view/img/data/properties/" . $property->getImage());
             $propertyDao->delete($idProperty);
             header("location: /admin/admin/property?delete=true");
         }
@@ -112,22 +114,83 @@ class PropertyController
         $sallerDao = new SallerDao();
         $errors = [];
         $sallers = $sallerDao->findAll();
-        if ($_SERVER["REQUEST_METHOD"] == "GET") {
-            $idProperty = intval($_GET["idProperty"]);
-            $property = $propertyDao->find($idProperty);
+        $idProperty = intval($_GET["idProperty"]);
+        $property = $propertyDao->find($idProperty);
 
-            $router->render("admin/layout", [
-                "titelPage" => "Property-Updating",
-                "style" => "/view//admin/properties//property-style.css",
-                "page" => "property",
-                "action" => "update",
-                "crudAction" => "Updating Property",
-                "errors" => $errors,
-                "sallers" => $sallers,
-                "property" => $property
 
-            ]);
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $data = $_POST;
+            $data["image"] = $_FILES["image"]["name"];
+            //Validate inputs
+            if ($data["title"] == "") {
+                $errors["titleError"] = "Error: Complete the porperty title";
+            } else if (strlen($data["title"]) < 3) {
+                $errors["titleError"] = "Error: Property title must be more than 3 characters";
+            } else if (strlen($data["title"]) > 20) {
+                $errors["titleError"] = "Error: Property title must be less than 20 characters ";
+            }
+            if ($data["price"] == "") {
+                $errors["priceError"] = "Error: Add a house price";
+            }
+            if ($data["description"] == "") {
+                $errors["descriptionError"] = "Error: Complete the property description";
+            } else if (strlen($data["description"]) < 50) {
+                $errors["descriptionError"] = "Error: Property description must be more than 50 characters";
+            }
+            if ($data["parking"] == "") {
+                $errors["parkingError"] = "Error: Complete";
+            }
+            if ($data["rooms"] == "") {
+                $errors["roomsError"] = "Error: Complete";
+            }
+            if ($data["bethrooms"] == "") {
+                $errors["bethRoomsError"] = "Error: Complete";
+            }
+            if ($data["stars"] == "") {
+                $errors["starsError"] = "Error: Complete";
+            }
+            if (!array_key_exists("idSaller", $data)) {
+                $errors["idSaller"] = "Error: Select a saller";
+            }
+
+            if (empty($errors)) {
+                if ($data["image"] == "") {
+                    $image = $property->getImage();
+                    $property->setData($data);
+                    $property->setImage($image);
+                } else {
+                    //Get Image
+                    $image = $_FILES["image"];
+                    //Get Extension Image
+                    $extensionImage = explode(".", $image["name"])[1];
+                    //Generete new image name
+                    $imageName = md5(uniqid(rand(), true)) . "." . $extensionImage;
+                    //Saving new image
+                    move_uploaded_file($image["tmp_name"], "view/img/data/properties/" . $imageName);
+                    //Deleting last imge
+                    unlink("view/img/data/properties/" . $property->getImage());
+                    $property->setImage($imageName);
+                }
+                $result = $propertyDao->update($property);
+
+                if ($result) {
+                    header("location: /admin/admin/property/update?idProperty=$idProperty&update=true");
+                }
+            }
         }
+
+
+        $router->render("admin/layout", [
+            "titelPage" => "Property-Updating",
+            "style" => "/view//admin/properties//property-style.css",
+            "page" => "property",
+            "action" => "update",
+            "crudAction" => "Updating Property",
+            "errors" => $errors,
+            "sallers" => $sallers,
+            "property" => $property
+
+        ]);
     }
     public static function delete(Router $router)
     {
