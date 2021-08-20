@@ -137,7 +137,7 @@ class SalerController
             }
         }
         $router->render("admin/layout", [
-            "titelPage" => "Saller-Creation",
+            "titelPage" => "Saller-Updating",
             "style" => "/view//admin/sallers/saller-style.css",
             "page" => "saller",
             "action" => "update",

@@ -6,12 +6,14 @@ require "controller/LoginController.php";
 require "controller/AdminController.php";
 require "controller/PropertyController.php";
 require "controller/SallerController.php";
+require "controller/BlogController.php";
 
 use Router as Router;
 use LoginController as LoginController;
 use AdminController as AdminController;
 use PropertyController as PropertyController;
 use SalerController as SalerController;
+use BlogController as BlogController;
 
 
 $router = new Router();
@@ -43,6 +45,15 @@ $router->addGET("/admin/admin/saller/update", [SalerController::class, "update"]
 $router->addPOST("/admin/admin/saller/update", [SalerController::class, "update"]);
 $router->addGET("/admin/admin/saller/delete", [SalerController::class, "delete"]);
 $router->addPOST("/admin/admin/saller/delete", [SalerController::class, "delete"]);
+//--Admin/Blog--//
+$router->addGET("/admin/admin/blog", [BlogController::class, "dashboard"]);
+$router->addPOST("/admin/admin/blog", [BlogController::class, "dashboard"]);
+$router->addGET("/admin/admin/blog/create", [BlogController::class, "create"]);
+$router->addPOST("/admin/admin/blog/create", [BlogController::class, "create"]);
+$router->addGET("/admin/admin/blog/update", [BlogController::class, "update"]);
+$router->addPOST("/admin/admin/blog/update", [BlogController::class, "update"]);
+$router->addGET("/admin/admin/blog/delete", [BlogController::class, "delete"]);
+$router->addPOST("/admin/admin/blog/delete", [BlogController::class, "delete"]);
 
 $router->run();
 

@@ -14,7 +14,7 @@ class Blog{
         $this->idBlog = $data["idBlog"]??-1;
         $this->title = $data["title"]??"";
         $this->creator = $data["creator"]??"";
-        $this->stars = $data["stars"]??-1;
+        $this->stars = $data["stars"]??1;
         $this->content = $data["content"]??"";
         $this->image = $data["image"]??"";
     }
@@ -22,7 +22,7 @@ class Blog{
     public function setData($data = []){
         $this->title = $data["title"]??"";
         $this->creator = $data["creator"]??"";
-        $this->stars = $data["stars"]??-1;
+        $this->stars = $data["stars"]??1;
         $this->content = $data["content"]??"";
         $this->image = $data["image"]??"";
     }

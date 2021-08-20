@@ -11,7 +11,7 @@
         </form>
     </div>
 
-<?php if (array_key_exists("delete", $_GET)) { ?>
+    <?php if (array_key_exists("delete", $_GET)) { ?>
         <?php if ($_GET["delete"] == true) { ?>
             <p class="message-true">Removal was successful</p>
         <?php } ?>
@@ -29,12 +29,12 @@
                 </div>
                 <div class="saller__values">
                     <img class="saller__image" src="/view//img//data//sallers//<?php echo $saller->getImage() ?>" alt="">
-                    <p class="saller__name"><?php echo $saller->getName() . " ".$saller->getLastName() ?></p>
+                    <p class="saller__name"><?php echo $saller->getName() . " " . $saller->getLastName() ?></p>
                     <p class="saller__phone"><?php echo $saller->getPhoneNumber() ?></p>
 
                     <div class="saller__actions">
-                        <a class="button button-update" href="/admin/admin/saller/update?idSaller=<?php echo $saller->getIdSaller()?>">Update</a>
-                        <a class="button button-delete" href="/admin/admin/saller/delete?idSaller=<?php echo $saller->getIdSaller()?>">Delete</a>
+                        <a class="button button-update" href="/admin/admin/saller/update?idSaller=<?php echo $saller->getIdSaller() ?>">Update</a>
+                        <a class="button button-delete" href="/admin/admin/saller/delete?idSaller=<?php echo $saller->getIdSaller() ?>">Delete</a>
                     </div>
                 </div>
             </div>

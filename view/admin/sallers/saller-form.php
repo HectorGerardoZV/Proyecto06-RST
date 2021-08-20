@@ -2,7 +2,7 @@
     <a href="/admin/admin/saller" class=" button-back">Back</a>
 
     <div class="action__logo">
-        <img src="/view//img//icons//Logo-Min-Blue.svg" alt="">
+        <img src="/view//img//icons//Saller.svg" alt="">
         <h2><?php echo $crudAction ?></h2>
     </div>
 </div>
