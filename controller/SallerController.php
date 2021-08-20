@@ -149,10 +149,9 @@ class SalerController
     public static function delete()
     {
         $sallerDao = new SallerDao();
-        $idSaller =  $_GET["idSaller"];
+        $idSaller = intval($_GET["idSaller"]);
         $saller = $sallerDao->find($idSaller);
         unlink("view/img/data/sallers/" . $saller->getImage());
-        $sallerDao->delete($idSaller);
         header("location: /admin/admin/saller?delete=true");
     }
 }
