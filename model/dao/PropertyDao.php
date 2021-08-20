@@ -97,7 +97,13 @@ class PropertyDao
     }
     public function findLike($pattern)
     {
-        $query = "SELECT * FROM properties WHERE title LIKE '%$pattern%';";
+        $properties=[];
+        $query = "";
+        if ($pattern == "") {
+            $query = "SELECT * FROM properties;";
+        } else {
+            $query = "SELECT * FROM properties WHERE title LIKE '%$pattern%';";
+        }
         try {
             $result = $this->db->query($query);
             while ($data = $result->fetch_assoc()) {

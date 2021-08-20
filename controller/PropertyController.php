@@ -13,15 +13,11 @@ class PropertyController
     public static function dashboard(Router $router)
     {
         $propertyDao = new PropertyDao();
-        $properties = $propertyDao->findAll();
-
+        $pattern = "";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $idProperty =  $_POST["idProperty"];
-            $property = $propertyDao->find($idProperty);
-            unlink("view/img/data/properties/" . $property->getImage());
-            $propertyDao->delete($idProperty);
-            header("location: /admin/admin/property?delete=true");
+            $pattern = $_POST["pattern"];
         }
+        $properties = $propertyDao->findLike($pattern);
 
 
         $router->render("admin/layout", [
@@ -47,7 +43,7 @@ class PropertyController
                 $errors["titleError"] = "Error: Complete the porperty title";
             } else if (strlen($data["title"]) < 3) {
                 $errors["titleError"] = "Error: Property title must be more than 3 characters";
-            } else if (strlen($data["title"]) > 20) {
+            } else if (strlen($data["title"]) > 30) {
                 $errors["titleError"] = "Error: Property title must be less than 20 characters ";
             }
             if ($data["price"] == "") {
@@ -126,7 +122,7 @@ class PropertyController
                 $errors["titleError"] = "Error: Complete the porperty title";
             } else if (strlen($data["title"]) < 3) {
                 $errors["titleError"] = "Error: Property title must be more than 3 characters";
-            } else if (strlen($data["title"]) > 20) {
+            } else if (strlen($data["title"]) > 30) {
                 $errors["titleError"] = "Error: Property title must be less than 20 characters ";
             }
             if ($data["price"] == "") {
@@ -192,9 +188,17 @@ class PropertyController
 
         ]);
     }
+
+
     public static function delete(Router $router)
     {
-        echo "Desde Property Dash";
+        $propertyDao = new PropertyDao();
+        $properties = $propertyDao->findAll();
+        $idProperty =  $_GET["idProperty"];
+        $property = $propertyDao->find($idProperty);
+        unlink("view/img/data/properties/" . $property->getImage());
+        $propertyDao->delete($idProperty);
+        header("location: /admin/admin/property?delete=true");
     }
 }
 

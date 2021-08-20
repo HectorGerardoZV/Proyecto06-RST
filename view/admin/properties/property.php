@@ -6,7 +6,7 @@
     <div class="options">
         <a href="/admin/admin/property/create" class="button button-create">New</a>
         <form class="searcher" action="" method="POST">
-            <input type="text" placeholder="Search Property">
+            <input type="text" placeholder="Search Property" name="pattern">
             <input type="image" src="/view/img/icons//Search.svg" alt="Submit">
         </form>
     </div>
@@ -34,10 +34,7 @@
 
                     <div class="property__actions">
                         <a class="button button-update" href="/admin/admin/property/update?idProperty=<?php echo $property->getIdProperty() ?>">Update</a>
-                        <form class=""  method="POST">
-                            <input type="hidden" name="idProperty" value=<?php echo $property->getIdProperty() ?>>
-                            <input class="button button-delete" type="submit" value="Delete">
-                        </form>
+                        <a class="button button-delete" href="/admin/admin/property/delete?idProperty=<?php echo $property->getIdProperty() ?>">Delete</a>
                     </div>
                 </div>
             </div>
