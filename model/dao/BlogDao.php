@@ -69,7 +69,7 @@ class BlogDao
             $result = $this->db->query($query);
             while ($data = $result->fetch_assoc()) {
                 $blog = new Blog($data);
-                $blogs[]= $blog;
+                $blogs[] = $blog;
             }
         } catch (\Throwable $th) {
             return null;
@@ -78,13 +78,18 @@ class BlogDao
     }
     public function findLike($pattern)
     {
-        $query = "SELECT * FROM blogs WHERE title LIKE '%$pattern%';";
+        $query = "";
         $blogs = [];
+        if ($pattern == "") {
+            $query = "SELECT * FROM blogs;";
+        } else {
+            $query = "SELECT * FROM blogs WHERE title LIKE '%$pattern%';";
+        }
         try {
             $result = $this->db->query($query);
             while ($data = $result->fetch_assoc()) {
                 $blog = new Blog($data);
-                $blogs[]= $blog;
+                $blogs[] = $blog;
             }
         } catch (\Throwable $th) {
             return null;
@@ -99,7 +104,7 @@ class BlogDao
             $result = $this->db->query($query);
             while ($data = $result->fetch_assoc()) {
                 $blog = new Blog($data);
-                $blogs[]= $blog;
+                $blogs[] = $blog;
             }
         } catch (\Throwable $th) {
             return null;

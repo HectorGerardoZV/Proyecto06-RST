@@ -71,49 +71,55 @@ class SallerDao
         }
         return false;
     }
-    public function findAll(){
+    public function findAll()
+    {
         $query = "SELECT * FROM sallers;";
-        $sallers=[];
+        $sallers = [];
         try {
             $result = $this->db->query($query);
-           while ($data = $result->fetch_assoc()) {
-               $saller = new Saller($data);
-               $sallers[] = $saller;
-           }
+            while ($data = $result->fetch_assoc()) {
+                $saller = new Saller($data);
+                $sallers[] = $saller;
+            }
         } catch (\Throwable $th) {
             return  null;
         }
         return $sallers;
-
     }
-    public function findLike($pattern){
-        $query = "SELECT * FROM sallers WHERE name LIKE '%$pattern%' OR lastName LIKE '%$pattern%';";
-        $sallers=[];
+    public function findLike($pattern)
+    {
+        $query = "";
+        $sallers = [];
+
+        if ($pattern == "") {
+            $query = "SELECT * FROM sallers;";
+        } else {
+            $query = "SELECT * FROM sallers WHERE name LIKE '%$pattern%' OR lastName LIKE '%$pattern%';";
+        }
         try {
             $result = $this->db->query($query);
-           while ($data = $result->fetch_assoc()) {
-               $saller = new Saller($data);
-               $sallers[] = $saller;
-           }
+            while ($data = $result->fetch_assoc()) {
+                $saller = new Saller($data);
+                $sallers[] = $saller;
+            }
         } catch (\Throwable $th) {
             return  null;
         }
         return $sallers;
-
     }
-    public function findMany($many){
+    public function findMany($many)
+    {
         $query = "SELECT * FROM sallers LIMIT $many";
-        $sallers=[];
+        $sallers = [];
         try {
             $result = $this->db->query($query);
-           while ($data = $result->fetch_assoc()) {
-               $saller = new Saller($data);
-               $sallers[] = $saller;
-           }
+            while ($data = $result->fetch_assoc()) {
+                $saller = new Saller($data);
+                $sallers[] = $saller;
+            }
         } catch (\Throwable $th) {
             return  null;
         }
         return $sallers;
-
     }
 }

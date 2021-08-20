@@ -30,6 +30,18 @@
         } else if ($action == "create" || $action == "update") {
             include __DIR__ . "/properties/property-form.php";
         }
+    } else if ($page == "saller") {
+        if ($action == "dashboard") {
+            include __DIR__ . "/sallers/saller.php";
+        } else if ($action == "create" || $action == "update") {
+            include __DIR__ . "/sallers/saller-form.php";
+        }
+    } else if ($page == "blog") {
+        if ($action == "dashboard") {
+            include __DIR__ . "/blogs/blog.php";
+        } else if ($action == "create" || $action == "update") {
+            include __DIR__ . "/blogs/blog-form.php";
+        }
     }
 
     ?>

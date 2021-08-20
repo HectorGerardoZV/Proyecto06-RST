@@ -1,14 +1,3 @@
-.icon__crud {
-    margin: 4rem 0;
-    display: flex;
-    justify-content: center;
-}
-
-.icon__crud img {
-    width: 8rem;
-    height: 8rem;
-}
-
 .options {
     width: 100%;
     margin-bottom: 4rem;
