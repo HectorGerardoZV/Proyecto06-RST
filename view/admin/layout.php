@@ -19,9 +19,7 @@
                 <a class="" href="/admin/admin"> <img src="/view/img//icons//Logo-Max.svg" alt=""></a>
                 <img src="/view//img//icons//NightMode-Off.svg" alt="">
             </div>
-            <form class="logout" action="" method="POST">
-                <input type="image" src="/view/img/icons//LogOut-withe.svg" alt="Submit">
-            </form>
+            <a class="logout" href="/logout"><img src="/view/img/icons//LogOut-withe.svg" alt=""></a>
         </div>
     </header>
 

@@ -19,7 +19,7 @@
             </div>
             <div class="crud">
                 <a class="crud__option" href="/admin/admin/property"> <img src="/view//img//icons//House-Pink.svg" alt=""></a>
-                <a class="crud__option" href=""> <img src="/view//img//icons//Saller-Pink.svg" alt=""></a>
+                <a class="crud__option" href="/admin/admin/saller"> <img src="/view//img//icons//Saller-Pink.svg" alt=""></a>
                 <a class="crud__option" href=""> <img src="/view//img//icons//Blog-Pink.svg" alt=""></a>
             </div>
             <form class="logout" action="" method="POST">
