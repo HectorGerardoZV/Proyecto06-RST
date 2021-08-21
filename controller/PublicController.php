@@ -10,7 +10,7 @@ class PublicController
     {
         $propertyDao = new PropertyDao();
         $blogDao = new BlogDao();
-        $properties = $propertyDao->findMany(6);
+        $properties = $propertyDao->findMany(3);
         $blogs = $blogDao->findMany(3);
         $router->render("public/masterPage", [
             "titlePage" => "Home",
@@ -29,17 +29,23 @@ class PublicController
     }
     public static function properties(Router $router)
     {
+        $propertyDao = new PropertyDao();
+        $properties = $propertyDao->findAll();
         $router->render("public/masterPage", [
             "titlePage" => "Properties",
-            "page" => "properties"
+            "page" => "properties",
+            "properties" => $properties
 
         ]);
     }
     public static function blogs(Router $router)
     {
+        $blogDao = new BlogDao();
+        $blogs = $blogDao->findAll();
         $router->render("public/masterPage", [
             "titlePage" => "Blogs",
-            "page" => "blogs"
+            "page" => "blogs",
+            "blogs"=>$blogs
 
         ]);
     }

@@ -365,3 +365,7 @@ p {
     width: 50rem;
     border-radius: 1rem;
 }
+
+.blog-section h1 {
+    margin-bottom: 3rem;
+}
