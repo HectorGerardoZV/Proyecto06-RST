@@ -18,7 +18,6 @@ class Router{
 
     public function run(){
       
-      
         session_start();
         $login = $_SESSION["login"]??false;
         $urlProtected = [
@@ -62,8 +61,6 @@ class Router{
         foreach ($data as $key => $value) {
             $$key = $value;
         }
-
-
         ob_start();
         $contenido = ob_get_clean();
         include __DIR__ . "/view/".$view.".php";
