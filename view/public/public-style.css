@@ -1,1 +1,195 @@
 @import url("../style/style.css");
+.header__index {
+    background-image: url("/view/img/images/ImgHeaderIndex.jpg");
+    width: 100%;
+    height: 60rem;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.header__back {
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorTransB);
+    padding: 2rem;
+}
+
+.header__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.slogan__pagen {
+    height: 20rem;
+    margin-bottom: 5rem;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.slogan__pagen h1 {
+    width: 80rem;
+    color: var(--colorTrans1);
+    transition: ease .4s;
+}
+
+.slogan__pagen:hover h1 {
+    width: 100%;
+    color: var(--colorSolid1);
+}
+
+.header__page {
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorSolidB);
+    padding: 2rem;
+}
+
+.header__navegation {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    background-color: var(--colorSolidB);
+    padding: 3rem;
+}
+
+.footer__navegation {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    gap: 2rem;
+}
+
+.navegation {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.navegation a {
+    color: var(--colorSolid1);
+}
+
+.main {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.section {
+    margin-bottom: 10rem;
+}
+
+
+/*---INDEX---*/
+
+
+/*___About Us:Section__*/
+
+.index-aboutUs h2 {
+    color: var(--colorSolidC);
+    text-align: center;
+}
+
+.aboutUs__information {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+    margin-top: 3rem;
+}
+
+.aboutUs__information-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.aboutUs__information-item h3,
+p {
+    color: var(--colorSolidC);
+}
+
+.aboutUs__information-item p {
+    text-align: justify;
+}
+
+
+/*___Properties: Section__*/
+
+.index-properties h2 {
+    color: var(--colorSolidC);
+    text-align: center;
+}
+
+.properties-layout {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 5rem;
+    row-gap: 5rem;
+}
+
+.property__cart {
+    background-color: var(--colorSolidB);
+    border-radius: 1rem;
+}
+
+.property__content {
+    text-align: center;
+}
+
+.property__content h3,
+p {
+    margin-bottom: 2rem;
+}
+
+.property__content h3 {
+    color: var(--colorSolid1);
+}
+
+.property__content p {
+    color: var(--colorSolidE);
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.property__image img {
+    width: 100%;
+    height: 25rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.view {
+    margin-top: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -3rem;
+}
+
+.view a {
+    color: var(--colorSolidB);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.button {
+    width: 50%;
+    padding: 1.8rem;
+    border-radius: 1rem;
+}
+
+.button-view {
+    background-color: var(--colorSolidE);
+}

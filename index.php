@@ -64,6 +64,9 @@ $router->addGET("/properties", [PublicController::class, "properties"]);
 $router->addGET("/blogs", [PublicController::class, "blogs"]);
 $router->addGET("/contact", [PublicController::class, "contact"]);
 $router->addPOST("/contact", [PublicController::class, "contact"]);
+//--Public pages gest--//
+$router->addGET("/property", [PublicController::class, "property"]);
+$router->addGET("/blog", [PublicController::class, "blog"]);
 
 
 
