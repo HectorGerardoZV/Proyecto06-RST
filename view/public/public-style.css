@@ -56,6 +56,14 @@
     align-items: center;
 }
 
+.header__navegation a {
+    transition: ease .4s;
+}
+
+.header__navegation a:hover {
+    color: var(--colorSolidD);
+}
+
 .footer {
     background-color: var(--colorSolidB);
     padding: 3rem;
@@ -68,6 +76,14 @@
     align-items: center;
     padding: 3rem;
     gap: 2rem;
+}
+
+.footer__navegation a {
+    transition: ease .4s;
+}
+
+.footer__navegation a:hover {
+    color: var(--colorSolidD);
 }
 
 .navegation {
@@ -83,6 +99,11 @@
 .main {
     margin-top: 5rem;
     margin-bottom: 5rem;
+}
+
+.main h1 {
+    text-align: center;
+    color: var(--colorSolidB);
 }
 
 .section {
@@ -263,14 +284,14 @@ p {
 }
 
 .blog-layout {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
 }
 
 .blog__cart {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 40% 60%;
     background-color: var(--colorSolidB);
     border-radius: 1rem;
 }
@@ -286,6 +307,7 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 2rem;
 }
 
 .blog__content h2 {
@@ -294,7 +316,7 @@ p {
 
 .blog__content a {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     color: var(--colorSolidB);
     font-size: 2.5rem;
     font-weight: bold;
@@ -314,4 +336,32 @@ p {
     background-color: var(--colorSolidD);
     font-size: 2.5rem;
     font-weight: bold;
+}
+
+
+/*----About Us-----*/
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.aboutUs__carac {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    column-gap: 3rem;
+    align-items: center;
+}
+
+.aboutUs__carac:last-of-type {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    column-gap: 3rem;
+    align-items: center;
+}
+
+.aboutUs__carac img {
+    width: 50rem;
+    border-radius: 1rem;
 }

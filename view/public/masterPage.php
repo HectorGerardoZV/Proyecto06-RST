@@ -19,7 +19,7 @@
                         <a href="/"><img src="/view//img//icons//Logo-Max.svg" alt=""></a>
 
                         <nav class="navegation">
-                            <a href="/aboutUs">About Us</a>
+                            <a  href="/aboutUs">About Us</a>
                             <a href="/properties">Properties</a>
                             <a href="/blogs">Blogs</a>
                             <a href="/contact">Contact</a>

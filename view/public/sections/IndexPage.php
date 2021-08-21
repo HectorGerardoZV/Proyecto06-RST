@@ -52,7 +52,7 @@
     </div>
 </section>
 
-<section class="section index-blogs container-min">
+<section class="section index-blogs container-regular">
     <h2>Our Blog</h2>
     <?php
     include __DIR__ . "/../includes/BlogsItems.php"
