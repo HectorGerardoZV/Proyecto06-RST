@@ -2,6 +2,7 @@
 
 use PropertyDao as PropertyDao;
 use BlogDao as BlogDao;
+use SallerDao as SallerDao;
 
 class PublicController
 {
@@ -11,7 +12,7 @@ class PublicController
         $propertyDao = new PropertyDao();
         $blogDao = new BlogDao();
         $properties = $propertyDao->findMany(3);
-        $blogs = $blogDao->findMany(3);
+        $blogs = $blogDao->findMany(4);
         $router->render("public/masterPage", [
             "titlePage" => "Home",
             "page" => "index",
@@ -59,9 +60,17 @@ class PublicController
     }
     public static function property(Router $router)
     {
+        $propertyDao = new PropertyDao();
+        $sallerDao = new SallerDao();
+        $idProperty = intval($_GET["idProperty"]);
+        $property = $propertyDao->find($idProperty);
+        $saller = $sallerDao->find($property->getIdSaller());
+
         $router->render("public/masterPage", [
             "titlePage" => "Property",
-            "page" => "property"
+            "page" => "property",
+            "property" =>$property,
+            "saller"=>$saller
 
         ]);
     }
