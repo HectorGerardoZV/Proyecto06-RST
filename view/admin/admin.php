@@ -15,7 +15,7 @@
         <!-- Navegation-->
         <div class="admin__navegation">
             <div class="view">
-                <a href=""> <img src="/view//img//icons//Watch-Views.svg" alt=""></a>
+                <a href="/"> <img src="/view//img//icons//Watch-Views.svg" alt=""></a>
             </div>
             <div class="crud">
                 <a class="crud__option" href="/admin/admin/property"> <img src="/view//img//icons//House-Pink.svg" alt=""></a>

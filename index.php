@@ -7,6 +7,7 @@ require "controller/AdminController.php";
 require "controller/PropertyController.php";
 require "controller/SallerController.php";
 require "controller/BlogController.php";
+require "controller/PublicController.php";
 
 use Router as Router;
 use LoginController as LoginController;
@@ -14,6 +15,7 @@ use AdminController as AdminController;
 use PropertyController as PropertyController;
 use SalerController as SalerController;
 use BlogController as BlogController;
+use PublicController as PublicController;
 
 
 $router = new Router();
@@ -54,6 +56,16 @@ $router->addGET("/admin/admin/blog/update", [BlogController::class, "update"]);
 $router->addPOST("/admin/admin/blog/update", [BlogController::class, "update"]);
 $router->addGET("/admin/admin/blog/delete", [BlogController::class, "delete"]);
 $router->addPOST("/admin/admin/blog/delete", [BlogController::class, "delete"]);
+
+//Public URL's
+$router->addGET("/", [PublicController::class, "index"]);
+$router->addGET("/aboutUs", [PublicController::class, "aboutUs"]);
+$router->addGET("/properties", [PublicController::class, "properties"]);
+$router->addGET("/blogs", [PublicController::class, "blogs"]);
+$router->addGET("/contact", [PublicController::class, "contact"]);
+$router->addPOST("/contact", [PublicController::class, "contact"]);
+
+
 
 $router->run();
 
