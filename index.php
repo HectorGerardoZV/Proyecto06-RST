@@ -68,9 +68,12 @@ $router->addPOST("/contact", [PublicController::class, "contact"]);
 $router->addGET("/property", [PublicController::class, "property"]);
 $router->addGET("/blog", [PublicController::class, "blog"]);
 
+//--Error-page--//
+$router->addGET("/error", [PublicController::class, "error"]);
 
 
 $router->run();
+
 
 
 ?>

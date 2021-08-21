@@ -23,7 +23,7 @@ class AdminController
 
 
     public static function admin(Router $router)
-    {
+    { 
         //Daos
         $propertyDao = new PropertyDao();
         $sallerDao = new SallerDao();
@@ -34,6 +34,7 @@ class AdminController
         $numSallers = sizeof($sallerDao->findAll());
         $numBlogs = sizeof($blogDao->findAll());
 
+       
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("location: /logout");
         }

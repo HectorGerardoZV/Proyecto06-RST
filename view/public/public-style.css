@@ -64,6 +64,10 @@
     color: var(--colorSolidD);
 }
 
+.admin__logo-header {
+    width: 3rem;
+}
+
 .footer {
     background-color: var(--colorSolidB);
     padding: 3rem;

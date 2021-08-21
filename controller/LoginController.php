@@ -6,6 +6,7 @@ require __DIR__ . "/../model/class/User.php";
 use UserDao as UserDao;
 use User as User;
 
+
 class LoginController
 {
 
@@ -14,7 +15,6 @@ class LoginController
     {
 
         $userError = false;
-        $userNameError = false;
         $userDao = new UserDao();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = new User($_POST);
@@ -31,14 +31,19 @@ class LoginController
             }
         }
 
-
-        $router->render("login/login", [
-            "userError" => $userError ?? false
-        ]);
+        $login = $_SESSION["login"] ?? false;
+        if ($login) {
+            header("location: admin/admin");
+        } else {
+            $router->render("login/login", [
+                "userError" => $userError ?? false
+            ]);
+        }
     }
-    public static function logout(){
+    public static function logout()
+    {
         session_start();
-        $_SESSION= [];
+        $_SESSION = [];
         header("location: /login");
     }
 }

@@ -11,6 +11,7 @@
 
 <body>
 
+
     <?php if ($page == "index") { ?>
         <header class="header__index">
             <div class="header__back ">
@@ -19,10 +20,14 @@
                         <a href="/"><img src="/view//img//icons//Logo-Max.svg" alt=""></a>
 
                         <nav class="navegation">
-                            <a  href="/aboutUs">About Us</a>
+                            <a href="/aboutUs">About Us</a>
                             <a href="/properties">Properties</a>
                             <a href="/blogs">Blogs</a>
                             <a href="/contact">Contact</a>
+                            <?php if ($login) { ?>
+                                <a href="/admin/admin"><img class="admin__logo-header" src="/view//img//icons//Admin-Logo-Withe.svg" alt=""></a>
+
+                            <?php } ?>
                         </nav>
                     </div>
                     <div class="slogan__pagen">
@@ -44,6 +49,10 @@
                     <a href="/properties">Properties</a>
                     <a href="/blogs">Blogs</a>
                     <a href="/contact">Contact</a>
+                    <?php if ($login) { ?>
+                        <a href="/admin/admin"><img class="admin__logo-header" src="/view//img//icons//Admin-Logo-Withe.svg" alt=""></a>
+
+                    <?php } ?>
                 </nav>
             </div>
         </header>

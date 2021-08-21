@@ -13,18 +13,23 @@ class PublicController
         $blogDao = new BlogDao();
         $properties = $propertyDao->findMany(3);
         $blogs = $blogDao->findMany(4);
+
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "Home",
             "page" => "index",
             "properties" => $properties,
-            "blogs" => $blogs
+            "blogs" => $blogs,
+            "login" => $login
         ]);
     }
     public static function aboutUs(Router $router)
     {
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "About Us",
-            "page" => "aboutUs"
+            "page" => "aboutUs",
+            "login"=>$login
 
         ]);
     }
@@ -32,10 +37,12 @@ class PublicController
     {
         $propertyDao = new PropertyDao();
         $properties = $propertyDao->findAll();
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "Properties",
             "page" => "properties",
-            "properties" => $properties
+            "properties" => $properties,
+            "login"=>$login
 
         ]);
     }
@@ -43,18 +50,22 @@ class PublicController
     {
         $blogDao = new BlogDao();
         $blogs = $blogDao->findAll();
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "Blogs",
             "page" => "blogs",
-            "blogs"=>$blogs
+            "blogs"=>$blogs,
+            "login"=>$login
 
         ]);
     }
     public static function contact(Router $router)
     {
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "Contact",
-            "page" => "contact"
+            "page" => "contact",
+            "login"=>$login
 
         ]);
     }
@@ -66,11 +77,13 @@ class PublicController
         $property = $propertyDao->find($idProperty);
         $saller = $sallerDao->find($property->getIdSaller());
 
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "Property",
             "page" => "property",
             "property" =>$property,
-            "saller"=>$saller
+            "saller"=>$saller,
+            "login"=>$login
 
         ]);
     }
@@ -79,11 +92,17 @@ class PublicController
         $blogDao = new BlogDao();
         $idBlog = intval($_GET["idBlog"]);
         $blog = $blogDao->find($idBlog);
+
+        $login = $_SESSION["login"]??false;
         $router->render("public/masterPage", [
             "titlePage" => "Blog",
             "page" => "blog",
-            "blog"=>$blog
+            "blog"=>$blog,
+            "login"=>$login
 
         ]);
+    }
+    public static function error(Router $router){
+        $router->render("error",[]);
     }
 }
