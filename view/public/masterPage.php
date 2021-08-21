@@ -50,7 +50,7 @@
     <?php } ?>
 
 
-    <main class="main container-regular">
+    <main class="main">
         <?php
         if ($page == "index") {
             include __DIR__ . "/sections/IndexPage.php";

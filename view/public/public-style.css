@@ -193,3 +193,125 @@ p {
 .button-view {
     background-color: var(--colorSolidE);
 }
+
+.all-properties {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.button-viewAll-properties {
+    width: 20rem;
+    background-color: var(--colorSolidD);
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--colorSolidB);
+}
+
+
+/*___contact:seciton___*/
+
+.index-contact h2 {
+    text-align: center;
+    color: var(--colorSolidC);
+    margin-bottom: 3rem;
+}
+
+.contact__image {
+    width: 100%;
+    height: 50rem;
+    background-image: url("/view/img/images/ImgContact.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contact__background {
+    width: 100%;
+    height: 100%;
+    background-color: var(--colorTransB);
+}
+
+.contact__information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.contact__information p {
+    font-size: 3.5rem;
+    color: var(--colorSolid1);
+}
+
+.button-contact {
+    width: 20rem;
+    background-color: var(--colorSolidD);
+    color: var(--colorSolidB);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+/*___blogs:section___*/
+
+.index-blogs h2 {
+    text-align: center;
+    color: var(--colorSolidC);
+    margin-bottom: 3rem;
+}
+
+.blog-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.blog__cart {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    background-color: var(--colorSolidB);
+    border-radius: 1rem;
+}
+
+.blog__image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.blog__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blog__content h2 {
+    color: var(--colorSolidE);
+}
+
+.blog__content a {
+    text-align: center;
+    padding: 2rem;
+    color: var(--colorSolidB);
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: var(--colorSolidE);
+    width: 40%;
+    border-radius: 1rem;
+}
+
+.all-blogs {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.button-viewAll-blogs {
+    width: 20rem;
+    background-color: var(--colorSolidD);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
