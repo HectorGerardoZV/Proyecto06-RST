@@ -5,7 +5,7 @@
                 <img src="/view//img//data//blogs//<?php echo $blog->getImage() ?>" alt="">
             </div>
             <div class="blog__content">
-                <h2><?php echo $blog->getTitle() ?></h2>
+                <h3><?php echo $blog->getTitle() ?></h3>
 
                 <a href="/blog?idBlog=<?php echo $blog->getIdBlog()?>">View</a>
             </div>

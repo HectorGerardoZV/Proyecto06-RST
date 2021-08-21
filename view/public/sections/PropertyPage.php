@@ -36,7 +36,6 @@
 
     </div>
 
-
     <div class="saller container-min">
         <div class="saller__image">
             <img src="/view//img//data//sallers//<?php echo $saller->getImage() ?>" alt="">

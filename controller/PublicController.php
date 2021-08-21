@@ -76,9 +76,13 @@ class PublicController
     }
     public static function blog(Router $router)
     {
+        $blogDao = new BlogDao();
+        $idBlog = intval($_GET["idBlog"]);
+        $blog = $blogDao->find($idBlog);
         $router->render("public/masterPage", [
             "titlePage" => "Blog",
-            "page" => "blog"
+            "page" => "blog",
+            "blog"=>$blog
 
         ]);
     }

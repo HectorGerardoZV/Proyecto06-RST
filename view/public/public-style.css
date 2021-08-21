@@ -307,11 +307,11 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2rem;
 }
 
-.blog__content h2 {
+.blog__content h3 {
     color: var(--colorSolidE);
+    margin-bottom: 3rem;
 }
 
 .blog__content a {
@@ -321,7 +321,7 @@ p {
     font-size: 2.5rem;
     font-weight: bold;
     background-color: var(--colorSolidE);
-    width: 40%;
+    width: 50%;
     border-radius: 1rem;
 }
 
@@ -462,6 +462,7 @@ p {
     margin-bottom: 2rem;
     text-align: center;
     color: var(--colorSolidE);
+    border-radius: 1rem;
 }
 
 .saller__information p {
@@ -470,4 +471,38 @@ p {
     margin-bottom: 2rem;
     color: var(--colorSolidC);
     font-weight: bold;
+}
+
+
+/*---Single Blog---*/
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog h2,
+h3 {
+    color: var(--colorSolidC);
+}
+
+.blog h2 {
+    margin-bottom: 3rem;
+}
+
+.blog h3 {
+    margin-bottom: 3rem;
+}
+
+.blog__image-single {
+    width: 100rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+}
+
+.instructions__content {
+    padding: 4rem;
+    border: 4px solid var(--colorSolidC);
+    border-radius: 1rem;
 }
